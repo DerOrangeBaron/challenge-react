@@ -1,12 +1,15 @@
-import React from 'react';
-import HomePage from './HomePage';
-import HeaderComponent from '../components/HeaderComponent';
+import React from "react";
+import HomePage from "./HomePage";
+import HeaderComponent from "../components/HeaderComponent";
+import { Container } from "react-bootstrap";
 
 function MainView() {
   return (
     <>
       <HeaderComponent title="Rick & Morty" />
-      <HomePage></HomePage>
+      <Container className="pt-4">
+        <HomePage></HomePage>
+      </Container>
     </>
   );
 }
