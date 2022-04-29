@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import MainView from "./features/MainView";
+import MainView from "./screens/MainView";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

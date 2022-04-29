@@ -1,14 +1,16 @@
 import React from "react";
-import { Navbar, Container } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 
-function HeaderComponent({ title }) {
+function CharacterCardComponent({ character }) {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="/">{title}</Navbar.Brand>
-      </Container>
-    </Navbar>
+    <div>
+      <Image
+        roundedCircle="true"
+        src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+      ></Image>
+      <h3 className="mt-3">Card Title</h3>
+    </div>
   );
 }
 
-export default HeaderComponent;
+export default CharacterCardComponent;

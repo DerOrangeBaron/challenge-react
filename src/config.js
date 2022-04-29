@@ -1,3 +1,4 @@
-const columns = 3;
+const amountOfColumns = 3;
+const baseUrl = "https://rickandmortyapi.com/api/character/";
 
-export { columns };
+export { amountOfColumns };
