@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { amountOfColumns } from "../config";
 import CharacterCardComponent from "../components/CharacterCardComponent";
 import PaginationComponent from "../components/PaginationComponent";
@@ -38,9 +39,11 @@ function HomePage() {
         {characters.map((character, idx2) => {
           return (
             <Col md={4} key={`-${idx2}`}>
-              <CharacterCardComponent
-                character={character}
-              ></CharacterCardComponent>
+              <Link to={`character/${character.id}`}>
+                <CharacterCardComponent
+                  character={character}
+                ></CharacterCardComponent>
+              </Link>
             </Col>
           );
         })}
