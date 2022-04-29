@@ -38,7 +38,7 @@ export const characterSlice = createSlice({
       state.characters = action.payload.results;
       state.page = {
         ...action.payload.info,
-        actualPage: getPageNumber(action.payload.info.next),
+        actualPage: getPageNumber(action.payload.info),
       };
       state.loading = false;
     });
@@ -52,9 +52,14 @@ export const characterSlice = createSlice({
   },
 });
 
-const getPageNumber = (nextPageUrl) => {
-  const pageNumber = nextPageUrl.split("=")[1];
-  return pageNumber - 1;
+const getPageNumber = (pageInfo) => {
+  console.log(pageInfo);
+  if (pageInfo.next != undefined) {
+    const pageNumber = pageInfo.next.split("=")[1];
+    return pageNumber - 1;
+  } else {
+    return pageInfo.pages;
+  }
 };
 
 export const selectCharacters = (state) => state.rickAndMorty.characters || [];

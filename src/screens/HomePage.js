@@ -3,6 +3,7 @@ import { Row, Col, Pagination } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { amountOfColumns } from "../config";
 import CharacterCardComponent from "../components/CharacterCardComponent";
+import PaginationComponent from "../components/PaginationComponent";
 
 import {
   selectCharacters,
@@ -46,6 +47,7 @@ function HomePage() {
       </Row>
       {/* ); */}
       {/* })} */}
+      <PaginationComponent />
     </>
   );
 }
