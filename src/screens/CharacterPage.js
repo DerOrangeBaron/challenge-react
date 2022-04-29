@@ -1,26 +1,21 @@
 import { useEffect } from "react";
 import { Image, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavegate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import {
-  selectCharacter,
-  getCharacter,
-  selectLoading,
-} from "../reducers/characterSlice";
+import { selectCharacter, getCharacter } from "../reducers/characterSlice";
 
 function CharacterPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const character = useSelector(selectCharacter);
-  const loading = useSelector(selectLoading);
 
   useEffect(() => {
     async function dis() {
       await dispatch(getCharacter(id));
     }
     dis();
-  }, [id]);
+  }, [dispatch, id]);
 
   const borderColor =
     character.status === "Dead"
@@ -78,7 +73,7 @@ function CharacterPage() {
         <p>
           <strong>{subject[0]}</strong> {` ${toBe} `}
           {character.Type && `a ${character.Type}`}
-          {character.origin && character.origin.name && (
+          {character.origin && character.origin && (
             <>
               {`from `}
               <strong>{character.origin.name}</strong>

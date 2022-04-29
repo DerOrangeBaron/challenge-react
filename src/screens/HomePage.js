@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { amountOfColumns } from "../config";
 import CharacterCardComponent from "../components/CharacterCardComponent";
 import PaginationComponent from "../components/PaginationComponent";
 
@@ -10,21 +9,19 @@ import {
   selectCharacters,
   getCharacters,
   selectPage,
-  selectLoading,
 } from "../reducers/characterSlice";
 
 function HomePage() {
   const dispatch = useDispatch();
   const characters = useSelector(selectCharacters);
   const pageInfo = useSelector(selectPage);
-  const loading = useSelector(selectLoading);
 
   useEffect(() => {
     async function dis() {
       await dispatch(getCharacters(pageInfo.actualPage));
     }
     dis();
-  }, [pageInfo.actualPage]);
+  }, [dispatch, pageInfo.actualPage]);
 
   return (
     <Container className="pt-4">

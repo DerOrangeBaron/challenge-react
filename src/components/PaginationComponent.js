@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Pagination } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
 import { selectPage, getCharacters } from "../reducers/characterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
