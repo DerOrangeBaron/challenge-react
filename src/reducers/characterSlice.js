@@ -53,7 +53,6 @@ export const characterSlice = createSlice({
 });
 
 const getPageNumber = (pageInfo) => {
-  console.log(pageInfo);
   if (pageInfo.next != undefined) {
     const pageNumber = pageInfo.next.split("=")[1];
     return pageNumber - 1;

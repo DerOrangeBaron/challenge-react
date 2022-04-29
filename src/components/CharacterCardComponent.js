@@ -2,7 +2,6 @@ import React from "react";
 import { Image } from "react-bootstrap";
 
 function CharacterCardComponent({ character }) {
-  console.log(character);
   return (
     <div className="mb-5">
       <Image
