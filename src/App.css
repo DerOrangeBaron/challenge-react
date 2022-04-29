@@ -32,6 +32,59 @@
   align-items: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .w-80 {
   width: 80%;
 }
+
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blur {
+  background: rgba(15, 9, 9, 0.3); 
+  backdrop-filter: blur(8px); 
+  height: 350px;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.avatar-container {
+  position: relative;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  position: absolute;
+  width: 200px;
+  top: -100px;
+  margin-left: -100px;
+  border: rgb(182, 181, 181) 4px solid;
+}
+
+@media (max-width: 768px) {
+  .blur { 
+    height: 250px;
+  }
+  .title {
+    font-size: 2em;
+    height: 150px;
+  }
+}
+  

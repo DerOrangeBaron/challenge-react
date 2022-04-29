@@ -1,16 +1,13 @@
 import React from "react";
 import HomePage from "./HomePage";
 import HeaderComponent from "../components/HeaderComponent";
-import { Container } from "react-bootstrap";
 
-function MainView() {
+function MainView({ children }) {
   return (
-    <>
+    <div className="App">
       <HeaderComponent title="Rick & Morty" />
-      <Container className="pt-4">
-        <HomePage></HomePage>
-      </Container>
-    </>
+      {children}
+    </div>
   );
 }
 

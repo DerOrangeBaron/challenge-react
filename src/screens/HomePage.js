@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Row, Col, Pagination } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { amountOfColumns } from "../config";
 import CharacterCardComponent from "../components/CharacterCardComponent";
@@ -26,7 +26,7 @@ function HomePage() {
   }, [pageInfo.actualPage]);
 
   return (
-    <>
+    <Container className="pt-4">
       <h2 className="mb-5">List of characters</h2>
       {/* {characters.map((ch, idx) => {
         if (idx % amountOfColumns !== 0) {
@@ -48,7 +48,7 @@ function HomePage() {
       {/* ); */}
       {/* })} */}
       <PaginationComponent />
-    </>
+    </Container>
   );
 }
 
